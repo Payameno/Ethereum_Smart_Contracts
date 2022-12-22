@@ -10,4 +10,6 @@ contract Contract {
   int8 public a = -11;
   int8 public b = 126; // a signed integer
   int16 public difference = 137; //represents absolute difference
+  bytes32 public msg1 = "Hello World!"; //String literal example
+  bytes public msg2 = "This string should be more than 32bytes";
 }
