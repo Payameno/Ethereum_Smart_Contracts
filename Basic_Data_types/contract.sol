@@ -12,4 +12,12 @@ contract Contract {
   int16 public difference = 137; //represents absolute difference
   bytes32 public msg1 = "Hello World!"; //String literal example
   bytes public msg2 = "This string should be more than 32bytes";
+
+  //enums
+  enum Foods { Apple, Pizza, Bagel, Banana }
+
+	Foods public food1 = Foods.Apple;
+	Foods public food2 = Foods.Pizza;
+	Foods public food3 = Foods.Bagel;
+	Foods public food4 = Foods.Banana;
 }
