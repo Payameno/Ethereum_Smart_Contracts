@@ -19,4 +19,8 @@ contract Contract {
   function double(uint _z) external pure returns(uint _double) {
     _double = _z*2;
   } 
+
+  function double(uint _a, uint _b) public pure returns (uint, uint) {
+    return (_a*2, _b*2);
+  }
 }
