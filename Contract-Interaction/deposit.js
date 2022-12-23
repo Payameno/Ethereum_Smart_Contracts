@@ -9,3 +9,5 @@ const ethers = require('ethers');
 function deposit(contract) {
     return contract.deposit({value: ethers.utils.parseEther("1")})
 }
+
+//overrides object can include: value,gasFee, gasLimit, nonce
