@@ -3,11 +3,11 @@ pragma solidity ^0.8.4;
 
 contract ModifyVariable {
   uint public x;
-  bytes32 public y;
+  string public y;
 
-  constructor(uint _x,bytes32 _y) {
+  constructor(uint _x) {
     x = _x;
-    y = _y;
+    y = "First message";
   }
 
   function modifyToLeet() public {

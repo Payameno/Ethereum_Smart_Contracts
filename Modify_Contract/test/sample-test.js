@@ -4,7 +4,7 @@ const { expect, assert } = require("chai");
 // the `describe` scope encapsulates an entire test called `TestModifyVariable`
 // the `it` says the behavior that should be expected from the test
 describe("TestModifyVariable", function () {
-  it("should change x to 1337", async function () {
+  it("Should change x to 1337", async function () {
     // this line creates an ethers ContractFactory abstraction: https://docs.ethers.org/v5/api/contract/contract-factory/
     const ModifyVariable = await ethers.getContractFactory("ModifyVariable");
 
@@ -20,4 +20,13 @@ describe("TestModifyVariable", function () {
     const newX = await contract.x();
     assert.equal(newX.toNumber(), 1337);
   });
+  
+  it("Should change y to 'Default String'", async function () {
+    const ModifyVariable = await ethers.getContractFactory("ModifyVariable");
+    const contract = await ModifyVariable.deploy(11);
+    await contract.deployed();
+    await contract.modifyToLeet();
+    const newY = await contract.y();
+    assert.equal(newY, "Default String");
+  })
 });
