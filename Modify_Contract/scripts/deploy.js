@@ -20,6 +20,7 @@ async function main() {
   console.log(
     `Deployed to ${modifyVariable.address}`
   );
+
 }
 
 // We recommend this pattern to be able to use async/await everywhere
