@@ -7,4 +7,9 @@ contract Contract {
       owner = msg.sender;
     }
     receive() external payable{}
+
+    function tip() public payable {
+      ( bool r, ) = owner.call{value: msg.value}("");
+      require(r);
+    }
 }
