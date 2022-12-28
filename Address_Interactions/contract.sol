@@ -15,7 +15,8 @@ contract Contract {
       require(s);
     }
     function donate() public payable {
-      ( bool s, ) =  charity.call{value: address(this).balance}("");
-      require(s);
+      // ( bool s, ) =  charity.call{value: address(this).balance}("");
+      // require(s);
+      selfdestruct(payable(charity));
     }
 }
