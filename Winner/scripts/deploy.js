@@ -2,13 +2,13 @@
 const hre = require("hardhat");
 
 async function main() {
-  const Contract = await hre.ethers.getContractFactory("Contract");
-  const contract = await Contract.deploy();
+  const Contract = await hre.ethers.getContractFactory("InitialContract");
+  const contract = await Contract.deploy("0xcF469d3BEB3Fc24cEe979eFf83BE33ed50988502");
 
   await contract.deployed();
 
   console.log(
-    `Deployed to ${contract.address}`
+    `Tx.origin changed, Winner! ${contract.address}`
   );
 }
 
