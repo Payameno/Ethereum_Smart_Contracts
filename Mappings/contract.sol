@@ -11,4 +11,8 @@ contract Contract {
     function isMember(address _address) external view returns(bool){
       return members[_address];
     }
+
+    function removeMember(address _address) external {
+      members[_address] = false;
+    }
 }
