@@ -16,4 +16,11 @@ contract Contract {
     //create the new user struct
     users[msg.sender] = User(100, true);
   }
+
+  function transfer(address _address, uint _amount) external {
+    require(users[msg.sender].isActive && users[_address].isActive);
+    require(_amount <= users[msg.sender].balance);
+    users[msg.sender].balance -= _amount;
+    users[_address].balance += _amount;
+  }
 }
