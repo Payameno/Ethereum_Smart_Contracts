@@ -18,4 +18,10 @@ contract Collectible {
     emit Transfer(msg.sender, _receipient);
   }
 
+  event ForSale(uint, uint);
+  function markPrice(uint _price) external {
+    require(msg.sender == owner);
+    emit ForSale(_price, block.timestamp);
+  }
+
 }
