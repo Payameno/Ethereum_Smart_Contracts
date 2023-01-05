@@ -2,11 +2,20 @@
 pragma solidity ^0.8.4;
 
 contract Collectible {
+  address owner;
 
   event Deployed(address);
 
   constructor() {
+    owner = msg.sender;
     emit Deployed(msg.sender);
+  }
+
+  event Transfer(address,address);
+  function transfer(address _receipient) external {
+    require(msg.sender == owner);
+    owner = _receipient;
+    emit Transfer(msg.sender, _receipient);
   }
 
 }
