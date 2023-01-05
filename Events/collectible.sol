@@ -5,14 +5,14 @@ contract Collectible {
   address owner;
   uint price;
 
-  event Deployed(address);
+  event Deployed(address indexed);
 
   constructor() {
     owner = msg.sender;
     emit Deployed(msg.sender);
   }
 
-  event Transfer(address,address);
+  event Transfer(address indexed,address indexed);
   function transfer(address _receipient) external {
     require(msg.sender == owner);
     owner = _receipient;
@@ -27,7 +27,7 @@ contract Collectible {
   }
 
 //uint= pruchase amount/ address= buyer
-  event Purchase(uint, address);
+  event Purchase(uint, address indexed);
   function purchase() payable external {
 
     //make sure the value is equal to asked price
