@@ -19,7 +19,6 @@ contract Contract {
 
       uint index = 0;
       for (uint i=0; i < x.length; i++) {
-        uint elements;
         if(x[i] % 2 == 0) {
           evenNumArray[index] = x[i];
           index++;
